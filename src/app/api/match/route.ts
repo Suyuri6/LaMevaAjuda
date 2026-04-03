@@ -1,26 +1,36 @@
 import { NextResponse } from "next/server";
 import { computeProfile, matchAids } from "@/lib/matching/engine";
 import { seedAids } from "@/lib/data/seed-aids";
-import type { AidWithDetails } from "@/types/aid";
+import { db } from "@/lib/db/turso";
+import type { AidWithDetails, AidTranslation, EligibilityRule } from "@/types/aid";
 
-const supabaseConfigured =
-  process.env.NEXT_PUBLIC_SUPABASE_URL &&
-  process.env.NEXT_PUBLIC_SUPABASE_URL !== "your-supabase-url-here";
+const tursoConfigured =
+  process.env.TURSO_DATABASE_URL &&
+  !process.env.TURSO_DATABASE_URL.includes("your-");
 
 async function getAids(): Promise<AidWithDetails[]> {
-  if (!supabaseConfigured) {
+  if (!tursoConfigured) {
     return seedAids;
   }
 
-  const { createClient } = await import("@/lib/supabase/server");
-  const supabase = await createClient();
-  const { data, error } = await supabase
-    .from("aids")
-    .select("*, aid_translations(*), eligibility_rules(*)")
-    .eq("is_active", true);
+  const aidsResult = await db.execute("SELECT * FROM aids WHERE is_active = 1");
+  const translationsResult = await db.execute("SELECT * FROM aid_translations");
+  const rulesResult = await db.execute("SELECT * FROM eligibility_rules");
 
-  if (error) throw error;
-  return (data as unknown as AidWithDetails[]) ?? [];
+  const translations = translationsResult.rows as unknown as AidTranslation[];
+  const rules = rulesResult.rows.map((r) => ({
+    ...r,
+    value: JSON.parse(r.value as string),
+  })) as unknown as EligibilityRule[];
+
+  return aidsResult.rows.map((aid) => ({
+    ...aid,
+    amount_text: JSON.parse(aid.amount_text as string),
+    official_url: JSON.parse(aid.official_url as string),
+    is_active: Boolean(aid.is_active),
+    aid_translations: translations.filter((t) => t.aid_id === aid.id),
+    eligibility_rules: rules.filter((r) => r.aid_id === aid.id),
+  })) as unknown as AidWithDetails[];
 }
 
 export async function POST(request: Request) {
@@ -40,7 +50,8 @@ export async function POST(request: Request) {
     const matches = matchAids(profile, aids, locale);
 
     return NextResponse.json({ matches });
-  } catch {
+  } catch (e) {
+    console.error("Match API error:", e);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

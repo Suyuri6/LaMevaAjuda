@@ -22,7 +22,19 @@ export type AidCategory =
   | "social_inclusion"
   | "tax"
   | "immigration"
-  | "entrepreneurship";
+  | "entrepreneurship"
+  | "agriculture"
+  | "fishing"
+  | "culture"
+  | "sports"
+  | "digital"
+  | "tourism"
+  | "commerce"
+  | "energy"
+  | "health"
+  | "youth"
+  | "seniors"
+  | "transport";
 
 export interface Aid {
   id: string;

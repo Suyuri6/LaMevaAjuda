@@ -114,7 +114,19 @@
       "social_inclusion": "Inclusión social",
       "tax": "Fiscal",
       "immigration": "Inmigración",
-      "entrepreneurship": "Emprendimiento"
+      "entrepreneurship": "Emprendimiento",
+      "agriculture": "Agricultura",
+      "fishing": "Pesca",
+      "culture": "Cultura",
+      "sports": "Deportes",
+      "digital": "Digital",
+      "tourism": "Turismo",
+      "commerce": "Comercio",
+      "energy": "Energía",
+      "health": "Salud",
+      "youth": "Juventud",
+      "seniors": "Mayores",
+      "transport": "Transporte"
     }
   }
 }

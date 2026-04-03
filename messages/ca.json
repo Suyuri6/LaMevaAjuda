@@ -1,0 +1,115 @@
+{
+  "common": {
+    "appName": "LaMevaAjuda",
+    "next": "Següent",
+    "back": "Enrere",
+    "seeResults": "Veure resultats",
+    "language": "Idioma",
+    "startNow": "Comença ara",
+    "home": "Inici",
+    "about": "Sobre nosaltres",
+    "privacy": "Privacitat",
+    "disclaimer": "Aquesta web és informativa. Consulta sempre les fonts oficials.",
+    "loading": "Carregant...",
+    "error": "S'ha produït un error",
+    "noResults": "No s'han trobat resultats",
+    "filterAll": "Totes",
+    "filterGeneralitat": "Generalitat",
+    "filterEstado": "Estat",
+    "filterLocal": "Local",
+    "moreInfo": "Més informació",
+    "officialSource": "Font oficial",
+    "amount": "Import",
+    "category": "Categoria"
+  },
+  "landing": {
+    "heroTitle": "Descobreix quines ajudes pots rebre",
+    "heroSubtitle": "Respon unes preguntes senzilles i t'informem de les ajudes públiques a les quals podries tenir dret.",
+    "features": {
+      "fast": "Ràpid i senzill",
+      "fastDesc": "Respon 8 preguntes en menys de 3 minuts",
+      "complete": "Complet",
+      "completeDesc": "Ajudes de la Generalitat i el Govern d'Espanya",
+      "free": "Gratuït i anònim",
+      "freeDesc": "No guardem cap dada personal"
+    }
+  },
+  "wizard": {
+    "progress": "Pas {current} de {total}",
+    "steps": {
+      "age": {
+        "title": "Quina edat tens?",
+        "label": "Data de naixement"
+      },
+      "employment": {
+        "title": "Quina és la teva situació laboral?",
+        "employed": "Treballador/a per compte d'altri",
+        "unemployed": "En situació d'atur",
+        "selfEmployed": "Autònom/a",
+        "student": "Estudiant",
+        "retired": "Jubilat/da"
+      },
+      "income": {
+        "title": "Quins són els teus ingressos anuals?",
+        "label": "Ingressos anuals bruts (€)",
+        "help": "Inclou tots els ingressos de la unitat familiar"
+      },
+      "family": {
+        "title": "Quina és la teva situació familiar?",
+        "single": "Solter/a",
+        "married": "Casat/da o parella de fet",
+        "singleParent": "Família monoparental",
+        "widowed": "Vidu/a",
+        "divorced": "Divorciat/da",
+        "dependents": "Nombre de persones a càrrec",
+        "dependentsHelp": "Fills menors, persones grans o dependents"
+      },
+      "residence": {
+        "title": "On vius?",
+        "inCatalonia": "Visc a Catalunya",
+        "outsideCatalonia": "Visc fora de Catalunya",
+        "municipality": "Municipi",
+        "selectMunicipality": "Selecciona el teu municipi"
+      },
+      "disability": {
+        "title": "Tens algun grau de discapacitat reconegut?",
+        "percentage": "Grau de discapacitat (%)",
+        "none": "Cap discapacitat reconeguda",
+        "has": "Tinc discapacitat reconeguda"
+      },
+      "immigration": {
+        "title": "Quina és la teva situació administrativa?",
+        "citizen": "Ciutadà/na espanyol/a",
+        "euNational": "Ciutadà/na de la UE",
+        "permanentResident": "Resident permanent",
+        "temporaryResident": "Resident temporal",
+        "refugee": "Refugiat/da o sol·licitant d'asil",
+        "undocumented": "Sense documentació"
+      },
+      "housing": {
+        "title": "Quina és la teva situació d'habitatge?",
+        "owner": "Propietari/a",
+        "renter": "Llogater/a",
+        "shared": "Habitatge compartit",
+        "familyHome": "Visc amb la família",
+        "homeless": "Sense llar",
+        "other": "Altres"
+      }
+    }
+  },
+  "results": {
+    "title": "Ajudes a les quals podries tenir dret",
+    "subtitle": "Basant-nos en les teves respostes, aquestes són les ajudes que podrien aplicar-se al teu cas.",
+    "noResults": "No hem trobat ajudes que coincideixin amb el teu perfil. Això no vol dir que no tinguis dret a cap ajuda. Consulta les fonts oficials per a més informació.",
+    "startOver": "Tornar a començar",
+    "categories": {
+      "income": "Ingressos",
+      "housing": "Habitatge",
+      "employment": "Ocupació",
+      "family": "Família",
+      "disability": "Discapacitat",
+      "education": "Educació",
+      "dependency": "Dependència"
+    }
+  }
+}

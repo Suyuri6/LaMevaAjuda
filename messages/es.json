@@ -1,0 +1,115 @@
+{
+  "common": {
+    "appName": "LaMevaAjuda",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "seeResults": "Ver resultados",
+    "language": "Idioma",
+    "startNow": "Empieza ahora",
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "privacy": "Privacidad",
+    "disclaimer": "Esta web es informativa. Consulta siempre las fuentes oficiales.",
+    "loading": "Cargando...",
+    "error": "Se ha producido un error",
+    "noResults": "No se han encontrado resultados",
+    "filterAll": "Todas",
+    "filterGeneralitat": "Generalitat",
+    "filterEstado": "Estado",
+    "filterLocal": "Local",
+    "moreInfo": "Más información",
+    "officialSource": "Fuente oficial",
+    "amount": "Importe",
+    "category": "Categoría"
+  },
+  "landing": {
+    "heroTitle": "Descubre qué ayudas puedes recibir",
+    "heroSubtitle": "Responde unas preguntas sencillas y te informamos de las ayudas públicas a las que podrías tener derecho.",
+    "features": {
+      "fast": "Rápido y sencillo",
+      "fastDesc": "Responde 8 preguntas en menos de 3 minutos",
+      "complete": "Completo",
+      "completeDesc": "Ayudas de la Generalitat y el Gobierno de España",
+      "free": "Gratuito y anónimo",
+      "freeDesc": "No guardamos ningún dato personal"
+    }
+  },
+  "wizard": {
+    "progress": "Paso {current} de {total}",
+    "steps": {
+      "age": {
+        "title": "¿Qué edad tienes?",
+        "label": "Fecha de nacimiento"
+      },
+      "employment": {
+        "title": "¿Cuál es tu situación laboral?",
+        "employed": "Trabajador/a por cuenta ajena",
+        "unemployed": "En situación de desempleo",
+        "selfEmployed": "Autónomo/a",
+        "student": "Estudiante",
+        "retired": "Jubilado/a"
+      },
+      "income": {
+        "title": "¿Cuáles son tus ingresos anuales?",
+        "label": "Ingresos anuales brutos (€)",
+        "help": "Incluye todos los ingresos de la unidad familiar"
+      },
+      "family": {
+        "title": "¿Cuál es tu situación familiar?",
+        "single": "Soltero/a",
+        "married": "Casado/a o pareja de hecho",
+        "singleParent": "Familia monoparental",
+        "widowed": "Viudo/a",
+        "divorced": "Divorciado/a",
+        "dependents": "Número de personas a cargo",
+        "dependentsHelp": "Hijos menores, personas mayores o dependientes"
+      },
+      "residence": {
+        "title": "¿Dónde vives?",
+        "inCatalonia": "Vivo en Cataluña",
+        "outsideCatalonia": "Vivo fuera de Cataluña",
+        "municipality": "Municipio",
+        "selectMunicipality": "Selecciona tu municipio"
+      },
+      "disability": {
+        "title": "¿Tienes algún grado de discapacidad reconocido?",
+        "percentage": "Grado de discapacidad (%)",
+        "none": "Sin discapacidad reconocida",
+        "has": "Tengo discapacidad reconocida"
+      },
+      "immigration": {
+        "title": "¿Cuál es tu situación administrativa?",
+        "citizen": "Ciudadano/a español/a",
+        "euNational": "Ciudadano/a de la UE",
+        "permanentResident": "Residente permanente",
+        "temporaryResident": "Residente temporal",
+        "refugee": "Refugiado/a o solicitante de asilo",
+        "undocumented": "Sin documentación"
+      },
+      "housing": {
+        "title": "¿Cuál es tu situación de vivienda?",
+        "owner": "Propietario/a",
+        "renter": "Inquilino/a",
+        "shared": "Vivienda compartida",
+        "familyHome": "Vivo con mi familia",
+        "homeless": "Sin hogar",
+        "other": "Otros"
+      }
+    }
+  },
+  "results": {
+    "title": "Ayudas a las que podrías tener derecho",
+    "subtitle": "Basándonos en tus respuestas, estas son las ayudas que podrían aplicarse a tu caso.",
+    "noResults": "No hemos encontrado ayudas que coincidan con tu perfil. Esto no significa que no tengas derecho a ninguna ayuda. Consulta las fuentes oficiales para más información.",
+    "startOver": "Volver a empezar",
+    "categories": {
+      "income": "Ingresos",
+      "housing": "Vivienda",
+      "employment": "Empleo",
+      "family": "Familia",
+      "disability": "Discapacidad",
+      "education": "Educación",
+      "dependency": "Dependencia"
+    }
+  }
+}

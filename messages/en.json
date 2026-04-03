@@ -1,0 +1,115 @@
+{
+  "common": {
+    "appName": "LaMevaAjuda",
+    "next": "Next",
+    "back": "Back",
+    "seeResults": "See results",
+    "language": "Language",
+    "startNow": "Start now",
+    "home": "Home",
+    "about": "About",
+    "privacy": "Privacy",
+    "disclaimer": "This website is for informational purposes only. Always check official sources.",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noResults": "No results found",
+    "filterAll": "All",
+    "filterGeneralitat": "Generalitat",
+    "filterEstado": "State",
+    "filterLocal": "Local",
+    "moreInfo": "More information",
+    "officialSource": "Official source",
+    "amount": "Amount",
+    "category": "Category"
+  },
+  "landing": {
+    "heroTitle": "Discover which aid you can receive",
+    "heroSubtitle": "Answer a few simple questions and we'll inform you about the public aid you may be entitled to.",
+    "features": {
+      "fast": "Quick and easy",
+      "fastDesc": "Answer 8 questions in less than 3 minutes",
+      "complete": "Comprehensive",
+      "completeDesc": "Aid from the Generalitat and the Spanish Government",
+      "free": "Free and anonymous",
+      "freeDesc": "We don't store any personal data"
+    }
+  },
+  "wizard": {
+    "progress": "Step {current} of {total}",
+    "steps": {
+      "age": {
+        "title": "How old are you?",
+        "label": "Date of birth"
+      },
+      "employment": {
+        "title": "What is your employment status?",
+        "employed": "Employed",
+        "unemployed": "Unemployed",
+        "selfEmployed": "Self-employed",
+        "student": "Student",
+        "retired": "Retired"
+      },
+      "income": {
+        "title": "What is your annual income?",
+        "label": "Gross annual income (€)",
+        "help": "Include all household income"
+      },
+      "family": {
+        "title": "What is your family situation?",
+        "single": "Single",
+        "married": "Married or domestic partner",
+        "singleParent": "Single parent",
+        "widowed": "Widowed",
+        "divorced": "Divorced",
+        "dependents": "Number of dependents",
+        "dependentsHelp": "Minor children, elderly or dependent persons"
+      },
+      "residence": {
+        "title": "Where do you live?",
+        "inCatalonia": "I live in Catalonia",
+        "outsideCatalonia": "I live outside Catalonia",
+        "municipality": "Municipality",
+        "selectMunicipality": "Select your municipality"
+      },
+      "disability": {
+        "title": "Do you have a recognised disability?",
+        "percentage": "Disability percentage (%)",
+        "none": "No recognised disability",
+        "has": "I have a recognised disability"
+      },
+      "immigration": {
+        "title": "What is your immigration status?",
+        "citizen": "Spanish citizen",
+        "euNational": "EU citizen",
+        "permanentResident": "Permanent resident",
+        "temporaryResident": "Temporary resident",
+        "refugee": "Refugee or asylum seeker",
+        "undocumented": "Undocumented"
+      },
+      "housing": {
+        "title": "What is your housing situation?",
+        "owner": "Homeowner",
+        "renter": "Renter",
+        "shared": "Shared housing",
+        "familyHome": "Living with family",
+        "homeless": "Homeless",
+        "other": "Other"
+      }
+    }
+  },
+  "results": {
+    "title": "Aid you may be entitled to",
+    "subtitle": "Based on your answers, these are the aid programmes that may apply to your situation.",
+    "noResults": "We didn't find any aid matching your profile. This doesn't mean you're not entitled to any help. Please check official sources for more information.",
+    "startOver": "Start over",
+    "categories": {
+      "income": "Income",
+      "housing": "Housing",
+      "employment": "Employment",
+      "family": "Family",
+      "disability": "Disability",
+      "education": "Education",
+      "dependency": "Dependency"
+    }
+  }
+}

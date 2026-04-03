@@ -109,7 +109,12 @@
       "family": "Familia",
       "disability": "Discapacidad",
       "education": "Educación",
-      "dependency": "Dependencia"
+      "dependency": "Dependencia",
+      "pension": "Pensiones",
+      "social_inclusion": "Inclusión social",
+      "tax": "Fiscal",
+      "immigration": "Inmigración",
+      "entrepreneurship": "Emprendimiento"
     }
   }
 }

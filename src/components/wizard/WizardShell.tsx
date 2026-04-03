@@ -12,6 +12,7 @@ import StepResidence from "./steps/StepResidence";
 import StepDisability from "./steps/StepDisability";
 import StepImmigration from "./steps/StepImmigration";
 import StepHousing from "./steps/StepHousing";
+import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 
 const STEPS = [
   StepAge,
@@ -42,7 +43,7 @@ export default function WizardShell() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-8">
+    <div className="w-full max-w-xl mx-auto px-4 py-8">
       <ProgressBar
         current={currentStep}
         total={totalSteps}
@@ -52,7 +53,7 @@ export default function WizardShell() {
         })}
       />
 
-      <div className="mt-8 mb-8">
+      <div className="mt-10 mb-10 animate-step-reveal" key={currentStep}>
         <StepComponent />
       </div>
 
@@ -60,19 +61,30 @@ export default function WizardShell() {
         <button
           onClick={prevStep}
           disabled={isFirstStep}
-          className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+          className={`group inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-200 ${
             isFirstStep
               ? "invisible"
-              : "border border-border text-foreground hover:bg-secondary"
+              : "border border-border text-muted hover:text-foreground hover:border-foreground/20 hover:bg-secondary"
           }`}
         >
+          <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
           {t("common.back")}
         </button>
         <button
           onClick={handleNext}
-          className="px-6 py-3 rounded-lg font-medium bg-primary text-white hover:bg-primary-hover transition-colors"
+          className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-primary text-white shadow-md shadow-primary/15 hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 hover:-translate-y-0.5"
         >
-          {isLastStep ? t("common.seeResults") : t("common.next")}
+          {isLastStep ? (
+            <>
+              {t("common.seeResults")}
+              <CheckCircle className="h-4 w-4" />
+            </>
+          ) : (
+            <>
+              {t("common.next")}
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </>
+          )}
         </button>
       </div>
     </div>

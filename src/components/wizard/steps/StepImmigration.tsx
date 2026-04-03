@@ -20,20 +20,26 @@ export default function StepImmigration() {
 
   return (
     <StepWrapper title={t("title")}>
-      <div className="space-y-3">
-        {options.map((opt) => (
-          <button
-            key={opt.value}
-            onClick={() => setField("immigrationStatus", opt.value)}
-            className={`w-full text-left px-4 py-3 rounded-lg border transition-colors ${
-              data.immigrationStatus === opt.value
-                ? "border-primary bg-primary/10 text-foreground"
-                : "border-border bg-card text-foreground hover:border-primary/50"
-            }`}
-          >
-            {t(opt.labelKey)}
-          </button>
-        ))}
+      <div className="space-y-2.5">
+        {options.map((opt) => {
+          const selected = data.immigrationStatus === opt.value;
+          return (
+            <button
+              key={opt.value}
+              onClick={() => setField("immigrationStatus", opt.value)}
+              className={`w-full flex items-center gap-3 text-left px-4 py-3.5 rounded-xl border transition-all duration-200 ${
+                selected
+                  ? "border-primary bg-primary-light text-foreground shadow-sm"
+                  : "border-border bg-card text-foreground hover:border-primary/30 hover:bg-surface-warm"
+              }`}
+            >
+              <span className="font-medium">{t(opt.labelKey)}</span>
+              {selected && (
+                <span className="ml-auto w-2 h-2 rounded-full bg-primary animate-scale-in" />
+              )}
+            </button>
+          );
+        })}
       </div>
     </StepWrapper>
   );

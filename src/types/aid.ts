@@ -17,7 +17,12 @@ export type AidCategory =
   | "family"
   | "disability"
   | "education"
-  | "dependency";
+  | "dependency"
+  | "pension"
+  | "social_inclusion"
+  | "tax"
+  | "immigration"
+  | "entrepreneurship";
 
 export interface Aid {
   id: string;

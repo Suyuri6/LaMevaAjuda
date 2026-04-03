@@ -20,15 +20,15 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center rounded-lg border border-border/60 bg-card p-0.5">
       {routing.locales.map((loc) => (
         <button
           key={loc}
           onClick={() => handleChange(loc)}
-          className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
+          className={`px-2.5 py-1 text-xs font-semibold rounded-md transition-all duration-200 ${
             locale === loc
-              ? "bg-primary text-white"
-              : "text-muted hover:text-foreground hover:bg-secondary"
+              ? "bg-primary text-white shadow-sm"
+              : "text-muted hover:text-foreground"
           }`}
         >
           {localeLabels[loc]}

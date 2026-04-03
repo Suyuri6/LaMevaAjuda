@@ -10,7 +10,7 @@ export default async function WizardPage({
   setRequestLocale(locale);
 
   return (
-    <div className="flex-1 flex items-start justify-center py-8 sm:py-16">
+    <div className="flex-1 flex items-start justify-center py-10 sm:py-20 bg-gradient-to-b from-surface-warm to-background">
       <WizardShell />
     </div>
   );

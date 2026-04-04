@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { computeProfile, matchAids } from "@/lib/matching/engine";
 import { seedAids } from "@/lib/data/seed-aids";
 import { db } from "@/lib/db/turso";
+import { getSectorConfig } from "@/lib/sectors/config";
 import type { AidWithDetails, AidTranslation, EligibilityRule } from "@/types/aid";
 
 const tursoConfigured =
@@ -36,7 +37,7 @@ async function getAids(): Promise<AidWithDetails[]> {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { wizardData, locale = "ca" } = body;
+    const { wizardData, locale = "ca", sector } = body;
 
     if (!wizardData) {
       return NextResponse.json(
@@ -47,7 +48,13 @@ export async function POST(request: Request) {
 
     const profile = computeProfile(wizardData);
     const aids = await getAids();
-    const matches = matchAids(profile, aids, locale);
+    const allMatches = matchAids(profile, aids, locale);
+
+    // Filter by sector categories if a sector is specified
+    const sectorConfig = sector ? getSectorConfig(sector) : null;
+    const matches = sectorConfig
+      ? allMatches.filter((m) => sectorConfig.categories.includes(m.aid.category))
+      : allMatches;
 
     return NextResponse.json({ matches });
   } catch (e) {

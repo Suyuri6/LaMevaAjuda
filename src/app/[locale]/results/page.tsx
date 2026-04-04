@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { Link } from "../../../../i18n/navigation";
 import { useWizardStore } from "@/stores/wizard-store";
 import AidList from "@/components/results/AidList";
@@ -9,8 +10,18 @@ import type { MatchedAid } from "@/types/aid";
 import { RotateCcw, Loader2, AlertCircle, PartyPopper } from "lucide-react";
 
 export default function ResultsPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-20"><Loader2 className="h-8 w-8 text-primary mx-auto animate-spin" /></div>}>
+      <ResultsContent />
+    </Suspense>
+  );
+}
+
+function ResultsContent() {
   const t = useTranslations();
   const locale = useLocale();
+  const searchParams = useSearchParams();
+  const sector = searchParams.get("sector") || undefined;
   const { data, reset } = useWizardStore();
   const [matches, setMatches] = useState<MatchedAid[]>([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +33,7 @@ export default function ResultsPage() {
         const res = await fetch("/api/match", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ wizardData: data, locale }),
+          body: JSON.stringify({ wizardData: data, locale, sector }),
         });
         if (!res.ok) throw new Error("Failed");
         const json = await res.json();
@@ -34,7 +45,11 @@ export default function ResultsPage() {
       }
     }
     fetchMatches();
-  }, [data, locale]);
+  }, [data, locale, sector]);
+
+  const sectorName = sector && sector !== "all"
+    ? t(`sectors.${sector}.name` as Parameters<typeof t>[0])
+    : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
@@ -48,7 +63,11 @@ export default function ResultsPage() {
             <h1 className="font-serif text-3xl sm:text-4xl text-foreground leading-snug">
               {t("results.title")}
             </h1>
-            <p className="mt-2 text-muted text-lg leading-relaxed">{t("results.subtitle")}</p>
+            <p className="mt-2 text-muted text-lg leading-relaxed">
+              {sectorName
+                ? t("results.subtitleSector", { sector: sectorName })
+                : t("results.subtitle")}
+            </p>
           </div>
         </div>
       </div>
@@ -78,10 +97,10 @@ export default function ResultsPage() {
         </div>
       )}
 
-      {/* Start over button */}
-      <div className="mt-14 text-center">
+      {/* Actions */}
+      <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
         <Link
-          href="/wizard"
+          href="/sectors"
           onClick={() => reset()}
           className="group inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 font-medium text-muted hover:text-foreground hover:bg-secondary hover:border-foreground/10 transition-all duration-200"
         >

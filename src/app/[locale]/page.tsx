@@ -57,7 +57,7 @@ function LandingContent() {
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.4s" }}>
             <Link
-              href="/wizard"
+              href="/sectors"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               {t("common.startNow")}
@@ -124,7 +124,7 @@ function LandingContent() {
           </p>
           <div className="mt-8">
             <Link
-              href="/wizard"
+              href="/sectors"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               {t("common.startNow")}

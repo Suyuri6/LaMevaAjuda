@@ -1,8 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "../../../i18n/navigation";
 import { useWizardStore } from "@/stores/wizard-store";
+import { getSectorConfig, type SectorSlug, type StepId } from "@/lib/sectors/config";
 import ProgressBar from "@/components/ui/ProgressBar";
 import StepAge from "./steps/StepAge";
 import StepEmployment from "./steps/StepEmployment";
@@ -13,34 +15,43 @@ import StepDisability from "./steps/StepDisability";
 import StepImmigration from "./steps/StepImmigration";
 import StepHousing from "./steps/StepHousing";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
+import type { ComponentType } from "react";
 
-const STEPS = [
-  StepAge,
-  StepEmployment,
-  StepIncome,
-  StepFamily,
-  StepResidence,
-  StepDisability,
-  StepImmigration,
-  StepHousing,
-];
+const STEP_REGISTRY: Record<StepId, ComponentType> = {
+  age: StepAge,
+  employment: StepEmployment,
+  income: StepIncome,
+  family: StepFamily,
+  residence: StepResidence,
+  disability: StepDisability,
+  immigration: StepImmigration,
+  housing: StepHousing,
+};
 
-export default function WizardShell() {
+export default function WizardShell({ sector }: { sector: SectorSlug }) {
   const t = useTranslations();
   const router = useRouter();
-  const { currentStep, totalSteps, nextStep, prevStep } = useWizardStore();
+  const { currentStep, totalSteps, nextStep, prevStep, setSector } = useWizardStore();
 
-  const StepComponent = STEPS[currentStep];
+  useEffect(() => {
+    setSector(sector);
+  }, [sector, setSector]);
+
+  const config = getSectorConfig(sector);
+  const steps = config ? config.steps : [];
+  const StepComponent = steps[currentStep] ? STEP_REGISTRY[steps[currentStep]] : null;
   const isLastStep = currentStep === totalSteps - 1;
   const isFirstStep = currentStep === 0;
 
   function handleNext() {
     if (isLastStep) {
-      router.push("/results");
+      router.push(`/results?sector=${sector}`);
     } else {
       nextStep();
     }
   }
+
+  if (!StepComponent) return null;
 
   return (
     <div className="w-full max-w-xl mx-auto px-4 py-8">
@@ -53,7 +64,7 @@ export default function WizardShell() {
         })}
       />
 
-      <div className="mt-10 mb-10 animate-step-reveal" key={currentStep}>
+      <div className="mt-10 mb-10 animate-step-reveal" key={`${sector}-${currentStep}`}>
         <StepComponent />
       </div>
 

@@ -100,6 +100,7 @@
   "results": {
     "title": "Aid you may be entitled to",
     "subtitle": "Based on your answers, these are the aid programmes that may apply to your situation.",
+    "subtitleSector": "Results for: {sector}",
     "noResults": "We didn't find any aid matching your profile. This doesn't mean you're not entitled to any help. Please check official sources for more information.",
     "startOver": "Start over",
     "categories": {
@@ -127,6 +128,46 @@
       "youth": "Youth",
       "seniors": "Seniors",
       "transport": "Transport"
+    }
+  },
+  "sectors": {
+    "title": "What type of aid are you looking for?",
+    "subtitle": "Select a section and we'll ask the right questions to find the aid you're entitled to.",
+    "personal": {
+      "name": "Personal aid & income",
+      "desc": "Minimum income, guaranteed income, social inclusion"
+    },
+    "employment": {
+      "name": "Work & entrepreneurship",
+      "desc": "Unemployment benefits, self-employment, training"
+    },
+    "housing": {
+      "name": "Housing & energy",
+      "desc": "Rent, home purchase, energy efficiency"
+    },
+    "family": {
+      "name": "Family & dependency",
+      "desc": "Child benefits, pensions, carer support"
+    },
+    "disability": {
+      "name": "Disability & health",
+      "desc": "Disability pensions, technical aids, health"
+    },
+    "education": {
+      "name": "Education & youth",
+      "desc": "Scholarships, vocational training, youth programmes"
+    },
+    "agriculture": {
+      "name": "Agriculture & fishing",
+      "desc": "CAP, livestock, DACC grants, rural development"
+    },
+    "business": {
+      "name": "Business, culture & services",
+      "desc": "Commerce, tourism, culture, sports, transport, tax"
+    },
+    "all": {
+      "name": "Explore all aid",
+      "desc": "Full form with all questions"
     }
   }
 }

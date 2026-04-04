@@ -100,6 +100,7 @@
   "results": {
     "title": "Ayudas a las que podrías tener derecho",
     "subtitle": "Basándonos en tus respuestas, estas son las ayudas que podrían aplicarse a tu caso.",
+    "subtitleSector": "Resultados para la sección: {sector}",
     "noResults": "No hemos encontrado ayudas que coincidan con tu perfil. Esto no significa que no tengas derecho a ninguna ayuda. Consulta las fuentes oficiales para más información.",
     "startOver": "Volver a empezar",
     "categories": {
@@ -127,6 +128,46 @@
       "youth": "Juventud",
       "seniors": "Mayores",
       "transport": "Transporte"
+    }
+  },
+  "sectors": {
+    "title": "¿Qué tipo de ayudas buscas?",
+    "subtitle": "Selecciona una sección y te haremos las preguntas necesarias para encontrar las ayudas que te corresponden.",
+    "personal": {
+      "name": "Ayudas personales e ingresos",
+      "desc": "Ingreso mínimo vital, renta garantizada, inclusión social"
+    },
+    "employment": {
+      "name": "Trabajo y emprendimiento",
+      "desc": "Prestaciones por desempleo, autónomos, formación"
+    },
+    "housing": {
+      "name": "Vivienda y energía",
+      "desc": "Alquiler, compra de vivienda, eficiencia energética"
+    },
+    "family": {
+      "name": "Familia y dependencia",
+      "desc": "Hijos a cargo, pensiones, cuidado de dependientes"
+    },
+    "disability": {
+      "name": "Discapacidad y salud",
+      "desc": "Pensiones por discapacidad, ayudas técnicas, salud"
+    },
+    "education": {
+      "name": "Educación y juventud",
+      "desc": "Becas, formación profesional, programas jóvenes"
+    },
+    "agriculture": {
+      "name": "Agricultura y pesca",
+      "desc": "PAC, ganadería, ayudas DACC, desarrollo rural"
+    },
+    "business": {
+      "name": "Negocio, cultura y servicios",
+      "desc": "Comercio, turismo, cultura, deportes, transporte, fiscalidad"
+    },
+    "all": {
+      "name": "Explorar todas las ayudas",
+      "desc": "Formulario completo con todas las preguntas"
     }
   }
 }
